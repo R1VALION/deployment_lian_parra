@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas - Liam Parra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generador de Contraseñas</h1>
+
+        <div class="result-container">
+            <span id="passwordResult">Tu contraseña aquí</span>
+            <button class="btn" id="clipboardBtn" title="Copiar al portapapeles">📋</button>
+        </div>
+
+        <div class="settings">
+            <div class="setting">
+                <label>Longitud de contraseña (<span id="lengthValue">12</span>)</label>
+                <input type="range" id="length" min="8" max="20" value="12">
+            </div>
+            <div class="setting">
+                <label>Incluir Mayúsculas</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
+            <div class="setting">
+                <label>Incluir Minúsculas</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
+            <div class="setting">
+                <label>Incluir Números</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+            <div class="setting">
+                <label>Incluir Símbolos</label>
+                <input type="checkbox" id="symbols" checked>
+            </div>
+        </div>
+
+        <button class="btn btn-large" id="generateBtn">Generar Contraseña</button>
+
+        <div class="strength-container">
+            <p>Fortaleza: <span id="strengthText">Media</span></p>
+            <div class="strength-bar">
+                <div id="strengthIndicator"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
