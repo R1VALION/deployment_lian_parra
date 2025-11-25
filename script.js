@@ -36,8 +36,18 @@ generateBtn.addEventListener('click', () => {
 clipboardBtn.addEventListener('click', () => {
     const password = resultEl.innerText;
     if (!password || password === 'Tu contraseña aquí') return;
+
     navigator.clipboard.writeText(password);
-    alert('¡Contraseña copiada!');
+
+    const originalText = clipboardBtn.innerText;
+
+    clipboardBtn.innerText = '✅';
+    clipboardBtn.style.backgroundColor = '#27ae60';
+
+    setTimeout(() => {
+        clipboardBtn.innerText = originalText;
+        clipboardBtn.style.backgroundColor = '#3498db';
+    }, 1500);
 });
 
 function generatePassword(lower, upper, number, symbol, length) {
